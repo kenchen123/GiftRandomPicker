@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GiftRandomPicker.App">
     <Application.Resources>
-
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="Large"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
