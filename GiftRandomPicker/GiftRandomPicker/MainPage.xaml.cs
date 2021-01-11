@@ -19,23 +19,25 @@ namespace GiftRandomPicker
             InitializeComponent();
         }
 
-        private void Button_Pick_Name_OnClicked(object sender, EventArgs e)
+        private async void Button_Pick_Name_OnClicked(object sender, EventArgs e)
         {
+            await DisplayAlert("Picking up...", "Click OK to continue.", "OK");
             EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
             if (EmployeeList.Count != 0)
             {
-                SetEmployeeNameFormat(EmployeeList.FirstOrDefault());
+                SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
                 EmployeeList.RemoveAt(0);
             }
         }
 
-        private void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
+        private async void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
         {
+            await DisplayAlert("Picking up...", "Click OK to continue.", "OK");
             GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
             if (GiftList.Count != 0)
             {
-                SetGiftNumberFormat(GiftList.FirstOrDefault());
+                SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
                 GiftList.RemoveAt(0);
             }
@@ -48,136 +50,145 @@ namespace GiftRandomPicker
             {
                 EmployeeList = new List<string> { "Leo", "Joy", "Weita", "Ken", "Truman", "Jason", "Shareena", "Esther", "Evan", "Peggie", "Jennifer", "Sandy" };
                 GiftList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+                EmployeeName.Text = string.Empty;
+                GiftNumber.Text = string.Empty;
 
-                Leo.TextColor = Color.Black;
-                Joy.TextColor = Color.Black;
-                Weita.TextColor = Color.Black;
-                Ken.TextColor = Color.Black;
-                Truman.TextColor = Color.Black;
-                Jason.TextColor = Color.Black;
-                Shareena.TextColor = Color.Black;
-                Esther.TextColor = Color.Black;
-                Evan.TextColor = Color.Black;
-                Peggie.TextColor = Color.Black;
-                Sandy.TextColor = Color.Black;
-                Jennifer.TextColor = Color.Black;
-                Gift1.TextColor = Color.Black;
-                Gift2.TextColor = Color.Black;
-                Gift3.TextColor = Color.Black;
-                Gift4.TextColor = Color.Black;
-                Gift5.TextColor = Color.Black;
-                Gift6.TextColor = Color.Black;
-                Gift7.TextColor = Color.Black;
-                Gift8.TextColor = Color.Black;
-                Gift9.TextColor = Color.Black;
-                Gift10.TextColor = Color.Black;
-                Gift11.TextColor = Color.Black;
-                Gift12.TextColor = Color.Black;
+                var color = (Color) App.Current.Resources["LabelTextColor"];
+                SetLabelTextColor(Leo, color);
+                SetLabelTextColor(Joy, color);
+                SetLabelTextColor(Weita, color);
+                SetLabelTextColor(Ken, color);
+                SetLabelTextColor(Truman, color);
+                SetLabelTextColor(Jason, color);
+                SetLabelTextColor(Shareena, color);
+                SetLabelTextColor(Esther, color);
+                SetLabelTextColor(Evan, color);
+                SetLabelTextColor(Peggie, color);
+                SetLabelTextColor(Sandy, color);
+                SetLabelTextColor(Jennifer, color);
+
+                SetLabelTextColor(Gift1, color);
+                SetLabelTextColor(Gift2, color);
+                SetLabelTextColor(Gift3, color);
+                SetLabelTextColor(Gift4, color);
+                SetLabelTextColor(Gift5, color);
+                SetLabelTextColor(Gift6, color);
+                SetLabelTextColor(Gift7, color);
+                SetLabelTextColor(Gift8, color);
+                SetLabelTextColor(Gift9, color);
+                SetLabelTextColor(Gift10, color);
+                SetLabelTextColor(Gift11, color);
+                SetLabelTextColor(Gift12, color);
             }
         }
 
-        private void SetGiftNumberFormat(int number)
+        private void SetGiftNumberFormat(int number, Color color)
         {
             if (number == 1)
             {
-                Gift1.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift1, color);
             }
             if (number == 2)
             {
-                Gift2.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift2, color);
             }
             if (number == 3)
             {
-                Gift3.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift3, color);
             }
             if (number == 4)
             {
-                Gift4.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift4, color);
             }
             if (number == 5)
             {
-                Gift5.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift5, color);
             }
             if (number == 6)
             {
-                Gift6.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift6, color);
             }
             if (number == 7)
             {
-                Gift7.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift7, color);
             }
             if (number == 8)
             {
-                Gift8.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift8, color);
             }
             if (number == 9)
             {
-                Gift9.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift9, color);
             }
             if (number == 10)
             {
-                Gift10.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift10, color);
             }
             if (number == 11)
             {
-                Gift11.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift11, color);
             }
             if (number == 12)
             {
-                Gift12.TextColor = Color.LightGray;
+                SetLabelTextColor(Gift12, color);
             }
         }
 
-        private void SetEmployeeNameFormat(string name)
+        private void SetEmployeeNameFormat(string name, Color color)
         {
             if (name == "Leo")
             {
-                Leo.TextColor = Color.LightGray;
+                SetLabelTextColor(Leo, color);
             }
             if (name == "Joy")
             {
-                Joy.TextColor = Color.LightGray;
+                SetLabelTextColor(Joy, color);
             }
             if (name == "Weita")
             {
-                Weita.TextColor = Color.LightGray;
+                SetLabelTextColor(Weita, color);
             }
             if (name == "Ken")
             {
-                Ken.TextColor = Color.LightGray;
+                SetLabelTextColor(Ken, color);
             }
             if (name == "Truman")
             {
-                Truman.TextColor = Color.LightGray;
+                SetLabelTextColor(Truman, color);
             }
             if (name == "Jason")
             {
-                Jason.TextColor = Color.LightGray;
+                SetLabelTextColor(Jason, color);
             }
             if (name == "Shareena")
             {
-                Shareena.TextColor = Color.LightGray;
+                SetLabelTextColor(Shareena, color);
             }
             if (name == "Esther")
             {
-                Esther.TextColor = Color.LightGray;
+                SetLabelTextColor(Esther, color);
             }
             if (name == "Evan")
             {
-                Evan.TextColor = Color.LightGray;
+                SetLabelTextColor(Evan, color);
             }
             if (name == "Peggie")
             {
-                Peggie.TextColor = Color.LightGray;
+                SetLabelTextColor(Peggie, color);
             }
             if (name == "Sandy")
             {
-                Sandy.TextColor = Color.LightGray;
+                SetLabelTextColor(Sandy, color);
             }
             if (name == "Jennifer")
             {
-                Jennifer.TextColor = Color.LightGray;
+                SetLabelTextColor(Jennifer, color);
             }
+        }
+
+        private void SetLabelTextColor(Label label, Color color)
+        {
+            label.TextColor = color;
         }
     }
 }

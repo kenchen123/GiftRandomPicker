@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GiftRandomPicker.App">
     <Application.Resources>
-        <Style TargetType="{x:Type Label}">
-            <Setter Property="TextColor" Value="Black"></Setter>
+        <Color x:Key="LabelTextColor">Gold</Color>
+        <Color x:Key="PickedLabelTextColor">Black</Color>
+        <Style TargetType="{x:Type Label}" x:Key="LabelStyle">
+            <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"></Setter>
             <Setter Property="FontSize" Value="Large"></Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
+            <Setter Property="BackgroundColor" Value="Purple"></Setter>
+            <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"></Setter>
+            <Setter Property="FontSize" Value="Title"></Setter>
         </Style>
     </Application.Resources>
 </Application>
