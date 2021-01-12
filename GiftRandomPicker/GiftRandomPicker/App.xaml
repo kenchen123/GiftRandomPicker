@@ -11,7 +11,7 @@
             <Setter Property="FontSize" Value="Large"></Setter>
         </Style>
         <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
-            <Setter Property="BackgroundColor" Value="BlueViolet"></Setter>
+            <Setter Property="BackgroundColor" Value="MediumBlue"></Setter>
             <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}"></Setter>
             <Setter Property="FontSize" Value="Title"></Setter>
             <Setter Property="BorderColor" Value="{StaticResource LabelTextColor}"></Setter>
