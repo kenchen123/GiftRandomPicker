@@ -18,8 +18,8 @@
             </Grid.RowDefinitions>
             <Button Grid.Row="0" Grid.ColumnSpan="2" Clicked="Button_Pick_Name_OnClicked" Text="Pick up a name" HorizontalOptions="CenterAndExpand" Style="{StaticResource ButtonStyle}">
             </Button>
-            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" Style="{StaticResource LabelStyle}" FontSize="Title" Text="Current Name: " Margin="20 0"></Label>
-            <Label Grid.Row="1" Grid.Column="1" x:Name="EmployeeName" HorizontalTextAlignment="Start" Style="{StaticResource LabelStyle}" FontSize="Title" Margin="20 0"></Label>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" Style="{StaticResource LabelStyle}" FontSize="Title" Text="Current Name: " Margin="0, 20"></Label>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="EmployeeName" HorizontalTextAlignment="Start" Style="{StaticResource LabelStyle}" FontSize="Title" Margin="20, 20"></Label>
             <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="Black" BorderColor="Gold">
                 <Grid RowSpacing="10" ColumnSpacing="30" HorizontalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
@@ -55,8 +55,8 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Button Grid.ColumnSpan="2" Clicked="Button_Pick_Gift_OnClicked" Text="Pick up a gift number" HorizontalOptions="CenterAndExpand" Style="{StaticResource ButtonStyle}"></Button>
-            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" Style="{StaticResource LabelStyle}" FontSize="Title" Text="Current Gift Number: " Margin="20 0"></Label>
-            <Label Grid.Row="1" Grid.Column="1" x:Name="GiftNumber" Style="{StaticResource LabelStyle}" FontSize="Title" Margin="20 0"></Label>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" Style="{StaticResource LabelStyle}" FontSize="Title" Text="Current Gift Number: " Margin="0, 20"></Label>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="GiftNumber" Style="{StaticResource LabelStyle}" FontSize="Title" Margin="0, 20"></Label>
             <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="Black" BorderColor="Gold">
                 <Grid RowSpacing="10" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>

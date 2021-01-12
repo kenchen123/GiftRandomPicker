@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 
 namespace GiftRandomPicker
@@ -23,10 +24,10 @@ namespace GiftRandomPicker
 
         private async void Button_Pick_Name_OnClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Picking up...", "Click OK to continue.", "OK");
-            EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
             if (EmployeeList.Count != 0 && isGiftNumberPicked)
             {
+                await Navigation.PushPopupAsync(new ProgressBarPopup());
+                EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
                 SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
                 EmployeeList.RemoveAt(0);
@@ -37,10 +38,10 @@ namespace GiftRandomPicker
 
         private async void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Picking up...", "Click OK to continue.", "OK");
-            GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
             if (GiftList.Count != 0 && isNamePicked)
             {
+                await Navigation.PushPopupAsync(new ProgressBarPopup());
+                GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
                 SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
                 GiftList.RemoveAt(0);
