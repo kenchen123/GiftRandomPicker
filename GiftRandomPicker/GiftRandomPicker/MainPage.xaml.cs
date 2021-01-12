@@ -13,6 +13,8 @@ namespace GiftRandomPicker
     {
         private List<string> EmployeeList = new List<string>{"Leo","Joy","Weita","Ken","Truman","Jason","Shareena","Esther","Evan","Peggie", "Jennifer", "Sandy"} ;
         private List<int> GiftList = new List<int>{1,2,3,4,5,6,7,8,9,10,11,12};
+        private bool isNamePicked;
+        private bool isGiftNumberPicked = true;
 
         public MainPage()
         {
@@ -23,11 +25,13 @@ namespace GiftRandomPicker
         {
             await DisplayAlert("Picking up...", "Click OK to continue.", "OK");
             EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
-            if (EmployeeList.Count != 0)
+            if (EmployeeList.Count != 0 && isGiftNumberPicked)
             {
                 SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
                 EmployeeList.RemoveAt(0);
+                isNamePicked = true;
+                isGiftNumberPicked = false;
             }
         }
 
@@ -35,11 +39,13 @@ namespace GiftRandomPicker
         {
             await DisplayAlert("Picking up...", "Click OK to continue.", "OK");
             GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
-            if (GiftList.Count != 0)
+            if (GiftList.Count != 0 && isNamePicked)
             {
                 SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
                 GiftList.RemoveAt(0);
+                isNamePicked = false;
+                isGiftNumberPicked = true;
             }
         }
 
@@ -52,6 +58,8 @@ namespace GiftRandomPicker
                 GiftList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
                 EmployeeName.Text = string.Empty;
                 GiftNumber.Text = string.Empty;
+                isNamePicked = false;
+                isGiftNumberPicked = true;
 
                 var color = (Color) App.Current.Resources["LabelTextColor"];
                 SetLabelTextColor(Leo, color);
