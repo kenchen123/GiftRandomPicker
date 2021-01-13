@@ -1,132 +1,133 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GiftRandomPicker.MainPage">
+             x:Class="GiftRandomPicker.MainPage"
+             >
 
-    <StackLayout BackgroundColor="{StaticResource Background}" Padding="10">
-        <Frame BackgroundColor="{StaticResource Background}" Padding="24" CornerRadius="0">
-            <Grid Padding="0,0,1,0">
-                <Label Text="Gift Random Picker" HorizontalTextAlignment="Center" TextColor="{StaticResource LabelTextColor}" FontSize="36"/>
-                <Button Clicked="Button_Reset_OnClicked" Text="Reset" HorizontalOptions="End" Style="{StaticResource ButtonStyle}"></Button>
-            </Grid>
-        </Frame>
-        <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Button Grid.Row="0" Grid.ColumnSpan="2" 
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{StaticResource Background}" Padding="10">
+
+                <Grid Padding="0,0,1,0">
+                    <Label Text="Gift Random Picker" HorizontalTextAlignment="Center" TextColor="{StaticResource LabelTextColor}" FontSize="36"/>
+                    <Button Clicked="Button_Reset_OnClicked" Text="Reset" HorizontalOptions="End" Style="{StaticResource ButtonStyle}"></Button>
+                </Grid>
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.ColumnSpan="2" 
                     x:Name="ButtonPickName" 
                     Clicked="Button_Pick_Name_OnClicked" 
                     Text="Pick up a name" 
                     HorizontalOptions="CenterAndExpand" 
                     Style="{StaticResource ButtonStyle}">
-            </Button>
-            <Label Grid.Row="1" Grid.Column="0" 
+                    </Button>
+                    <Label Grid.Row="1" Grid.Column="0" 
                    HorizontalTextAlignment="End" 
                    VerticalTextAlignment="Center" 
                    Style="{StaticResource LabelStyle}" 
                    FontSize="Title" 
                    Text="Current Name: " 
                    Margin="0, 20">
-            </Label>
-            <Label Grid.Row="1" Grid.Column="1" 
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="1" 
                    x:Name="EmployeeName" 
                    HorizontalTextAlignment="Start" 
                    VerticalTextAlignment="Center" 
                    Style="{StaticResource LabelStyle}" 
                    FontSize="50" 
                    Margin="20, 20">
-            </Label>
-            <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Background}" BorderColor="Gold">
-                <Grid RowSpacing="10" ColumnSpacing="30" HorizontalOptions="CenterAndExpand">
+                    </Label>
+                    <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Background}" BorderColor="Gold">
+                        <Grid RowSpacing="10" ColumnSpacing="30" HorizontalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" x:Name="Leo" Text="Leo" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="0" Grid.Column="1" x:Name="Joy" Text="Joy" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="0" Grid.Column="2" x:Name="Weita" Text="Weita" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="0" Grid.Column="3" x:Name="Ken" Text="Ken" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="Truman" Text="Truman" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="Jason" Text="Jason" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="2" x:Name="Shareena" Text="Shareena" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="3" x:Name="Esther" Text="Esther" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="2" Grid.Column="0" x:Name="Evan" Text="Evan" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="2" Grid.Column="1" x:Name="Peggie" Text="Peggie" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="2" Grid.Column="2" x:Name="Sandy" Text="Sandy" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="2" Grid.Column="3" x:Name="Jennifer" Text="Jennifer" Style="{StaticResource LabelStyle}"></Label>
+                        </Grid>
+                    </Frame>
+                </Grid>
+                <Grid Margin="20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" x:Name="Leo" Text="Leo" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="0" Grid.Column="1" x:Name="Joy" Text="Joy" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="0" Grid.Column="2" x:Name="Weita" Text="Weita" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="0" Grid.Column="3" x:Name="Ken" Text="Ken" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="0" x:Name="Truman" Text="Truman" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="1" x:Name="Jason" Text="Jason" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="2" x:Name="Shareena" Text="Shareena" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="3" x:Name="Esther" Text="Esther" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="2" Grid.Column="0" x:Name="Evan" Text="Evan" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="2" Grid.Column="1" x:Name="Peggie" Text="Peggie" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="2" Grid.Column="2" x:Name="Sandy" Text="Sandy" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="2" Grid.Column="3" x:Name="Jennifer" Text="Jennifer" Style="{StaticResource LabelStyle}"></Label>
-                </Grid>
-            </Frame>
-        </Grid>
-        <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Button  Grid.Row="0" Grid.ColumnSpan="2"
+                    <Button  Grid.Row="0" Grid.ColumnSpan="2"
                      x:Name="ButtonPickNumber" 
                      Clicked="Button_Pick_Gift_OnClicked" 
-                     IsEnabled="{Binding IsEnabled}"  
                      Text="Pick up a gift number" 
                      HorizontalOptions="CenterAndExpand" 
                      Style="{StaticResource ButtonStyle}">
-            </Button>
-            <Label Grid.Row="1" Grid.Column="0" 
+                    </Button>
+                    <Label Grid.Row="1" Grid.Column="0" 
                    HorizontalTextAlignment="End" 
                    VerticalTextAlignment="Center"  
                    Style="{StaticResource LabelStyle}" 
                    FontSize="Title" 
                    Text="Current Gift Number: " 
                    Margin="0, 20">
-            </Label>
-            <Label Grid.Row="1" Grid.Column="1" 
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="1" 
                    x:Name="GiftNumber"  
                    HorizontalTextAlignment="Start" 
                    VerticalTextAlignment="Center" 
                    Style="{StaticResource LabelStyle}" 
                    FontSize="50"
                    Margin="0, 20">
-            </Label>
-            <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Background}" BorderColor="Gold">
-                <Grid RowSpacing="10" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Label x:Name="Gift1" Text="1" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Column="1" x:Name="Gift2" Text="2" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Column="2" x:Name="Gift3" Text="3" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Column="3" x:Name="Gift4" Text="4" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Column="4" x:Name="Gift5" Text="5" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Column="5" x:Name="Gift6" Text="6" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" x:Name="Gift7" Text="7" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="1" x:Name="Gift8" Text="8" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="2" x:Name="Gift9" Text="9" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="3" x:Name="Gift10" Text="10" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="4" x:Name="Gift11" Text="11" Style="{StaticResource LabelStyle}"></Label>
-                    <Label Grid.Row="1" Grid.Column="5" x:Name="Gift12" Text="12" Style="{StaticResource LabelStyle}"></Label>
+                    </Label>
+                    <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Background}" BorderColor="Gold">
+                        <Grid RowSpacing="10" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="Gift1" Text="1" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Column="1" x:Name="Gift2" Text="2" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Column="2" x:Name="Gift3" Text="3" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Column="3" x:Name="Gift4" Text="4" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Column="4" x:Name="Gift5" Text="5" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Column="5" x:Name="Gift6" Text="6" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" x:Name="Gift7" Text="7" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="Gift8" Text="8" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="2" x:Name="Gift9" Text="9" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="3" x:Name="Gift10" Text="10" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="4" x:Name="Gift11" Text="11" Style="{StaticResource LabelStyle}"></Label>
+                            <Label Grid.Row="1" Grid.Column="5" x:Name="Gift12" Text="12" Style="{StaticResource LabelStyle}"></Label>
+                        </Grid>
+                    </Frame>
                 </Grid>
-            </Frame>
-        </Grid>
-        
-    </StackLayout>
-
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

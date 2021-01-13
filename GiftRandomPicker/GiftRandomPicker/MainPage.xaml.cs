@@ -18,13 +18,13 @@ namespace GiftRandomPicker
         public MainPage()
         {
             InitializeComponent();
+            ButtonPickNumber.IsEnabled = false;
         }
 
         private void Button_Pick_Name_OnClicked(object sender, EventArgs e)
         {
             if (EmployeeList.Count != 0)
             {
-                //Navigation.PushPopupAsync(new ProgressBarPopup());
                 EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
                 SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
@@ -38,14 +38,10 @@ namespace GiftRandomPicker
         {
             if (GiftList.Count != 0)
             {
-                //Navigation.PushPopupAsync(new ProgressBarPopup(0));
                 GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
                 SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
                 GiftList.RemoveAt(0);
-                //Navigation.PopPopupAsync();
-                //Navigation.PushPopupAsync(new ProgressBarPopup(1));
-                //Navigation.PopPopupAsync();
                 ButtonPickNumber.IsEnabled = false;
                 ButtonPickName.IsEnabled = true;
             }

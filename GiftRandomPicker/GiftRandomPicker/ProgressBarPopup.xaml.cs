@@ -40,5 +40,27 @@ namespace GiftRandomPicker
                 return istimerRunning;
             });
         }
+
+        public ProgressBarPopup(double progress)
+        {
+            InitializeComponent();
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                if (progress >= 1)
+                {
+                    istimerRunning = false;
+                    Navigation.PopPopupAsync();
+                }
+                else
+                {
+                    progress += maxValue / progressmax;
+                    progressbar.ProgressTo(progress, 500, Easing.Linear);
+                    progressLabel.Text = $"{progress * 100}%";
+                    counter += 1;
+                }
+
+                return istimerRunning;
+            });
+        }
     }
 }
