@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Rg.Plugins.Popup.Extensions;
@@ -12,8 +13,8 @@ namespace GiftRandomPicker
 {
     public partial class MainPage : ContentPage
     {
-        private List<string> EmployeeList = new List<string>{"Leo","Joy","Weita","Ken","Truman","Jason","Shareena","Esther","Evan","Peggie", "Jennifer", "Sandy"} ;
-        private List<int> GiftList = new List<int>{1,2,3,4,5,6,7,8,9,10,11,12};
+        private List<string> EmployeeList = new List<string> { "Leo", "Joy", "Weita", "Ken", "Truman", "Jason", "Shareena", "Esther", "Evan", "Peggie", "Jennifer", "Sandy" };
+        private List<int> GiftList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 
         public MainPage()
         {
@@ -21,26 +22,45 @@ namespace GiftRandomPicker
             ButtonPickNumber.IsEnabled = false;
         }
 
-        private void Button_Pick_Name_OnClicked(object sender, EventArgs e)
+        private async void Button_Pick_Name_OnClicked(object sender, EventArgs e)
         {
+            var task = Task.Run(() => { Thread.Sleep(1000); });
+
             if (EmployeeList.Count != 0)
             {
+                EmployeeName.IsVisible = false;
+                NameProgressBar.IsVisible = true;
                 EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
-                SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
+                await NameProgressBar.ProgressTo(0.5, 500, Easing.Linear);
+                await Task.Delay(1000);
+                await NameProgressBar.ProgressTo(1, 500, Easing.Linear);
+                NameProgressBar.IsVisible = false;
+                NameProgressBar.Progress = 0;
+                EmployeeName.IsVisible = true;
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
+                SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 EmployeeList.RemoveAt(0);
-                ButtonPickName.IsEnabled = false; 
+                ButtonPickName.IsEnabled = false;
                 ButtonPickNumber.IsEnabled = true;
+                
             }
         }
 
-        private void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
+        private async void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
         {
             if (GiftList.Count != 0)
             {
+                GiftNumber.IsVisible = false;
+                NumberProgressBar.IsVisible = true;
                 GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
-                SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
+                await NumberProgressBar.ProgressTo(0.5, 500, Easing.Linear);
+                await Task.Delay(1000);
+                await NumberProgressBar.ProgressTo(1, 500, Easing.Linear);
+                NumberProgressBar.IsVisible = false;
+                NumberProgressBar.Progress = 0;
+                GiftNumber.IsVisible = true;
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
+                SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 GiftList.RemoveAt(0);
                 ButtonPickNumber.IsEnabled = false;
                 ButtonPickName.IsEnabled = true;
@@ -59,7 +79,7 @@ namespace GiftRandomPicker
                 ButtonPickNumber.IsEnabled = false;
                 ButtonPickName.IsEnabled = true;
 
-                var color = (Color) App.Current.Resources["LabelTextColor"];
+                var color = (Color)App.Current.Resources["LabelTextColor"];
                 SetLabelTextColor(Leo, color);
                 SetLabelTextColor(Joy, color);
                 SetLabelTextColor(Weita, color);

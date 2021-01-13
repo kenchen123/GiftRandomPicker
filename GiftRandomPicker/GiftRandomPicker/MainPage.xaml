@@ -33,6 +33,9 @@
                    Text="Current Name: " 
                    Margin="0, 20">
                     </Label>
+                    <ProgressBar Grid.Row="1" Grid.Column="1" x:Name="NameProgressBar" ProgressColor="Green" VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Fill"
+                                 IsVisible="False"></ProgressBar>
                     <Label Grid.Row="1" Grid.Column="1" 
                    x:Name="EmployeeName" 
                    HorizontalTextAlignment="Start" 
@@ -90,6 +93,9 @@
                    Text="Current Gift Number: " 
                    Margin="0, 20">
                     </Label>
+                    <ProgressBar Grid.Row="1" Grid.Column="1" x:Name="NumberProgressBar" ProgressColor="Green" VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Fill"
+                                 IsVisible="False"></ProgressBar>
                     <Label Grid.Row="1" Grid.Column="1" 
                    x:Name="GiftNumber"  
                    HorizontalTextAlignment="Start" 
