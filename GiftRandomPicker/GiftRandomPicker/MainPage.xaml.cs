@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Xml;
-using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 
 namespace GiftRandomPicker
@@ -42,7 +38,6 @@ namespace GiftRandomPicker
                 EmployeeList.RemoveAt(0);
                 ButtonPickName.IsEnabled = false;
                 ButtonPickNumber.IsEnabled = true;
-                
             }
         }
 
