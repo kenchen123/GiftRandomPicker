@@ -6,15 +6,16 @@
         <Color x:Key="LabelTextColor">Gold</Color>
         <Color x:Key="PickedLabelTextColor">Black</Color>
         <Color x:Key="ButtonTextColor">White</Color>
+        <Color x:Key="Background">#121212</Color>
         <Style TargetType="{x:Type Label}" x:Key="LabelStyle">
             <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"></Setter>
             <Setter Property="FontSize" Value="Large"></Setter>
         </Style>
         <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
-            <Setter Property="BackgroundColor" Value="MediumBlue"></Setter>
+            <Setter Property="BackgroundColor" Value="#286090"></Setter>
             <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}"></Setter>
             <Setter Property="FontSize" Value="Title"></Setter>
-            <Setter Property="BorderColor" Value="{StaticResource LabelTextColor}"></Setter>
+            <Setter Property="BorderColor" Value="Black"></Setter>
             <Setter Property="BorderWidth" Value="1"></Setter>
             <Setter Property="CornerRadius" Value="10"></Setter>
         </Style>

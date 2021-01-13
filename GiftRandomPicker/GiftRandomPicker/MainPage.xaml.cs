@@ -14,39 +14,40 @@ namespace GiftRandomPicker
     {
         private List<string> EmployeeList = new List<string>{"Leo","Joy","Weita","Ken","Truman","Jason","Shareena","Esther","Evan","Peggie", "Jennifer", "Sandy"} ;
         private List<int> GiftList = new List<int>{1,2,3,4,5,6,7,8,9,10,11,12};
-        private bool isNamePicked;
-        private bool isGiftNumberPicked = true;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private async void Button_Pick_Name_OnClicked(object sender, EventArgs e)
+        private void Button_Pick_Name_OnClicked(object sender, EventArgs e)
         {
-            if (EmployeeList.Count != 0 && isGiftNumberPicked)
+            if (EmployeeList.Count != 0)
             {
-                await Navigation.PushPopupAsync(new ProgressBarPopup());
+                //Navigation.PushPopupAsync(new ProgressBarPopup());
                 EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
                 SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
                 EmployeeList.RemoveAt(0);
-                isNamePicked = true;
-                isGiftNumberPicked = false;
+                ButtonPickName.IsEnabled = false; 
+                ButtonPickNumber.IsEnabled = true;
             }
         }
 
-        private async void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
+        private void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
         {
-            if (GiftList.Count != 0 && isNamePicked)
+            if (GiftList.Count != 0)
             {
-                await Navigation.PushPopupAsync(new ProgressBarPopup());
+                //Navigation.PushPopupAsync(new ProgressBarPopup(0));
                 GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
                 SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
                 GiftList.RemoveAt(0);
-                isNamePicked = false;
-                isGiftNumberPicked = true;
+                //Navigation.PopPopupAsync();
+                //Navigation.PushPopupAsync(new ProgressBarPopup(1));
+                //Navigation.PopPopupAsync();
+                ButtonPickNumber.IsEnabled = false;
+                ButtonPickName.IsEnabled = true;
             }
         }
 
@@ -59,8 +60,8 @@ namespace GiftRandomPicker
                 GiftList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
                 EmployeeName.Text = string.Empty;
                 GiftNumber.Text = string.Empty;
-                isNamePicked = false;
-                isGiftNumberPicked = true;
+                ButtonPickNumber.IsEnabled = false;
+                ButtonPickName.IsEnabled = true;
 
                 var color = (Color) App.Current.Resources["LabelTextColor"];
                 SetLabelTextColor(Leo, color);
