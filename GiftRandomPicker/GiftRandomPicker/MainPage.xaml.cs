@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using GiftRandomPicker.Models;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace GiftRandomPicker
@@ -11,11 +13,27 @@ namespace GiftRandomPicker
     {
         private List<string> EmployeeList = new List<string> { "Leo", "Joy", "Weita", "Ken", "Truman", "Jason", "Shareena", "Esther", "Evan", "Peggie", "Jennifer", "Sandy" };
         private List<int> GiftList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+        private Color PickedLabelTextColor = (Color)App.Current.Resources["PickedLabelTextColor"];
 
         public MainPage()
         {
             InitializeComponent();
             ButtonPickNumber.IsEnabled = false;
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            var records = await App.Database.GetRecordsAsync();
+            if (records.Count > 0 && !string.IsNullOrWhiteSpace(records.Where(x => x.ID == 1).FirstOrDefault().Record))
+            {
+                LoadRecord(records.Where(x => x.ID == 1).FirstOrDefault().Record);
+                if (EmployeeList.Count < GiftList.Count)
+                {
+                    ButtonPickName.IsEnabled = false;
+                    ButtonPickNumber.IsEnabled = true;
+                }
+            }
         }
 
         private async void Button_Pick_Name_OnClicked(object sender, EventArgs e)
@@ -27,18 +45,20 @@ namespace GiftRandomPicker
                 EmployeeName.IsVisible = false;
                 NameProgressBar.IsVisible = true;
                 EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
-                await NameProgressBar.ProgressTo(0.5, 500, Easing.Linear);
+                await NameProgressBar.ProgressTo(0.8, 500, Easing.Linear);
                 await Task.Delay(1000);
                 await NameProgressBar.ProgressTo(1, 500, Easing.Linear);
                 NameProgressBar.IsVisible = false;
                 NameProgressBar.Progress = 0;
                 EmployeeName.IsVisible = true;
                 EmployeeName.Text = EmployeeList.FirstOrDefault();
-                SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
+                SetEmployeeNameFormat(EmployeeList.FirstOrDefault(), PickedLabelTextColor);
                 EmployeeList.RemoveAt(0);
                 ButtonPickName.IsEnabled = false;
                 ButtonPickNumber.IsEnabled = true;
             }
+
+            SaveRecord();
         }
 
         private async void Button_Pick_Gift_OnClicked(object sender, EventArgs e)
@@ -48,18 +68,19 @@ namespace GiftRandomPicker
                 GiftNumber.IsVisible = false;
                 NumberProgressBar.IsVisible = true;
                 GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
-                await NumberProgressBar.ProgressTo(0.5, 500, Easing.Linear);
+                await NumberProgressBar.ProgressTo(0.8, 500, Easing.Linear);
                 await Task.Delay(1000);
                 await NumberProgressBar.ProgressTo(1, 500, Easing.Linear);
                 NumberProgressBar.IsVisible = false;
                 NumberProgressBar.Progress = 0;
                 GiftNumber.IsVisible = true;
                 GiftNumber.Text = GiftList.FirstOrDefault().ToString();
-                SetGiftNumberFormat(GiftList.FirstOrDefault(), (Color)App.Current.Resources["PickedLabelTextColor"]);
+                SetGiftNumberFormat(GiftList.FirstOrDefault(), PickedLabelTextColor);
                 GiftList.RemoveAt(0);
                 ButtonPickNumber.IsEnabled = false;
                 ButtonPickName.IsEnabled = true;
             }
+            SaveRecord();
         }
 
         private async void Button_Reset_OnClicked(object sender, EventArgs e)
@@ -210,6 +231,49 @@ namespace GiftRandomPicker
         private void SetLabelTextColor(Label label, Color color)
         {
             label.TextColor = color;
+        }
+
+        async Task SaveRecord()
+        {
+            var record = new Record()
+            {
+                CurrentName = EmployeeName.Text,
+                CurrentGiftNumber = GiftNumber.Text,
+                Employees = EmployeeList,
+                Gifts = GiftList
+            };
+
+            var recordTable = new RecordTable()
+            {
+                ID = 1,
+                Record = JsonConvert.SerializeObject(record),
+                TimeStamp = DateTime.Now
+            };
+
+            await App.Database.SaveRecordAsync(recordTable);
+        }
+
+        private void LoadRecord(string text)
+        {
+            var record = JsonConvert.DeserializeObject<Record>(text);
+
+            var names = EmployeeList.Except(record.Employees).ToList();
+            foreach (var name in names)
+            {
+                SetEmployeeNameFormat(name, PickedLabelTextColor);
+                EmployeeList.Remove(name);
+            }
+
+            var gifts = GiftList.Except(record.Gifts).ToList();
+            foreach (var gift in gifts)
+            {
+                SetGiftNumberFormat(gift, PickedLabelTextColor);
+                GiftList.Remove(gift);
+            }
+
+            EmployeeName.Text = record.CurrentName;
+            GiftNumber.Text = record.CurrentGiftNumber;
+            Console.WriteLine($"EmployeeList: {EmployeeList} \nGiftList: {GiftList}");
         }
     }
 }
