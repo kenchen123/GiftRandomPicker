@@ -45,7 +45,7 @@ namespace GiftRandomPicker
                 EmployeeName.IsVisible = false;
                 NameProgressBar.IsVisible = true;
                 EmployeeList = EmployeeList.OrderBy(x => Guid.NewGuid()).ToList();
-                await NameProgressBar.ProgressTo(0.5, 500, Easing.Linear);
+                await NameProgressBar.ProgressTo(0.8, 500, Easing.Linear);
                 await Task.Delay(1000);
                 await NameProgressBar.ProgressTo(1, 500, Easing.Linear);
                 NameProgressBar.IsVisible = false;
@@ -68,7 +68,7 @@ namespace GiftRandomPicker
                 GiftNumber.IsVisible = false;
                 NumberProgressBar.IsVisible = true;
                 GiftList = GiftList.OrderBy(x => Guid.NewGuid()).ToList();
-                await NumberProgressBar.ProgressTo(0.5, 500, Easing.Linear);
+                await NumberProgressBar.ProgressTo(0.8, 500, Easing.Linear);
                 await Task.Delay(1000);
                 await NumberProgressBar.ProgressTo(1, 500, Easing.Linear);
                 NumberProgressBar.IsVisible = false;
