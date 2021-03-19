@@ -6,10 +6,10 @@ using SQLite;
 
 namespace GiftRandomPicker.Models
 {
-    public class EasterSteps
+    public class EasterData
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Step1 { get; set; }
         public string Step2 { get; set; }

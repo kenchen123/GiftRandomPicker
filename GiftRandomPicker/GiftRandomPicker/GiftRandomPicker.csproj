@@ -19,8 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\EasterPage.xaml.cs">
-      <DependentUpon>EasterPage.xaml</DependentUpon>
+    <Compile Update="Views\EasterDataEditPage.xaml.cs">
+      <DependentUpon>EasterDataEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EasterDataListPage.xaml.cs">
+      <DependentUpon>EasterDataListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GiftPickerPage.xaml.cs">
+      <DependentUpon>GiftPickerPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -28,10 +34,13 @@
     <EmbeddedResource Update="ProgressBarPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EasterEditPage.xaml">
+    <EmbeddedResource Update="Views\EasterDataEditPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EasterPage.xaml">
+    <EmbeddedResource Update="Views\EasterDataListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EasterMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

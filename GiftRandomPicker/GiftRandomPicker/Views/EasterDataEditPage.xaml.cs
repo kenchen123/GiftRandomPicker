@@ -11,29 +11,26 @@ namespace GiftRandomPicker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public partial class EasterEditPage : ContentPage
+    public partial class EasterDataEditPage : ContentPage
     {
         public string ItemId
         {
-            set
-            {
-                LoadSteps(value);
-            }
+            set => LoadSteps(value);
         }
 
-        public EasterEditPage()
+        public EasterDataEditPage()
         {
             InitializeComponent();
-            BindingContext = new EasterSteps();
+            BindingContext = new EasterData();
         }
 
-        public EasterEditPage(EasterSteps item)
+        public EasterDataEditPage(EasterData item)
         {
             InitializeComponent();
             BindingContext = item;
         }
 
-        async void LoadSteps(string itemId)
+        private async void LoadSteps(string itemId)
         {
             try
             {
@@ -44,26 +41,26 @@ namespace GiftRandomPicker.Views
             }
             catch (Exception)
             {
-                Console.WriteLine("Failed to load note.");
+                Console.WriteLine("Failed to load data.");
             }
         }
 
-        async void OnSaveButtonClicked(object sender, EventArgs e)
+        private async void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            var note = (EasterSteps)BindingContext;
+            var note = (EasterData)BindingContext;
             if (!string.IsNullOrWhiteSpace(note.Name))
             {
                 await App.EasterStepsDatabase.SaveStepsAsync(note);
             }
 
-            Navigation.PushAsync(new EasterPage());
+            Navigation.PushAsync(new EasterDataListPage());
         }
 
-        async void OnDeleteButtonClicked(object sender, EventArgs e)
+        private async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            var note = (EasterSteps)BindingContext;
+            var note = (EasterData)BindingContext;
             await App.EasterStepsDatabase.DeleteStepsAsync(note);
-            Navigation.PushAsync(new EasterPage());
+            Navigation.PushAsync(new EasterDataListPage());
         }
     }
 }

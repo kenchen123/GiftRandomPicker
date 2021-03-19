@@ -40,8 +40,7 @@ namespace GiftRandomPicker
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new NavigationPage(new EasterPage());
-            //MainPage = new EasterEditPage();
+            MainPage = new NavigationPage(new EasterMainPage());
         }
 
         protected override void OnStart()

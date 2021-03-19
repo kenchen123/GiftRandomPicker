@@ -14,36 +14,36 @@ namespace GiftRandomPicker.Data
         public EasterStepsDatabase(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<EasterSteps>().Wait();
+            _database.CreateTableAsync<EasterData>().Wait();
         }
 
-        public Task<List<EasterSteps>> GetStepsListAsync()
+        public Task<List<EasterData>> GetStepsListAsync()
         {
-            return _database.Table<EasterSteps>().ToListAsync();
+            return _database.Table<EasterData>().ToListAsync();
         }
 
-        public Task<EasterSteps> GetStepsAsync(int id)
+        public Task<EasterData> GetStepsAsync(int id)
         {
-            return _database.Table<EasterSteps>()
+            return _database.Table<EasterData>()
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<int> SaveStepsAsync(EasterSteps steps)
+        public async Task<int> SaveStepsAsync(EasterData data)
         {
-            if (steps.ID != 0 && (await GetStepsAsync(steps.ID)) != null)
+            if (data.Id != 0 && (await GetStepsAsync(data.Id)) != null)
             {
-                return await _database.UpdateAsync(steps);
+                return await _database.UpdateAsync(data);
             }
             else
             {
-                return await _database.InsertAsync(steps);
+                return await _database.InsertAsync(data);
             }
         }
 
-        public Task<int> DeleteStepsAsync(EasterSteps steps)
+        public Task<int> DeleteStepsAsync(EasterData data)
         {
             // Delete a note.
-            return _database.DeleteAsync(steps);
+            return _database.DeleteAsync(data);
         }
     }
 }
