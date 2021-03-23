@@ -39,7 +39,18 @@ namespace GiftRandomPicker.Views
         {
             var data = new List<EasterData>()
             {
-                new EasterData {Name = "Leo"},
+                new EasterData
+                {
+                    Name = "Leo",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+                },
                 new EasterData
                 {
                     Name = "Weita",
@@ -52,12 +63,79 @@ namespace GiftRandomPicker.Views
                     Step7 = "Open all the draws.",
                     Step8 = "Look for the egg."
                 },
-                new EasterData {Name = "Ken"},
-                new EasterData {Name = "Jason"},
-                new EasterData {Name = "Shareena"},
-                new EasterData {Name = "Peggie"},
-                new EasterData {Name = "Sandy"},
-                new EasterData {Name = "Esther"}
+                new EasterData 
+                {
+                    Name = "Ken",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+
+                },
+                new EasterData
+                {
+                    Name = "Jason",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+                },
+                new EasterData
+                {
+                    Name = "Shareena",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+                },
+                new EasterData
+                {
+                    Name = "Peggie",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+                },
+                new EasterData
+                {
+                    Name = "Sandy",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+                },
+                new EasterData
+                {
+                    Name = "Esther",
+                    Step1 = "Step1",
+                    Step2 = "Step2",
+                    Step3 = "Step3",
+                    Step4 = "Step4",
+                    Step5 = "Step5",
+                    Step6 = "Step6",
+                    Step7 = "Step7",
+                    Step8 = "Step8"
+                }
             };
 
             foreach (var item in data)

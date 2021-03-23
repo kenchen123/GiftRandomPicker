@@ -33,18 +33,192 @@
                     <Label Grid.Column="1" Grid.Row="1" Text="" x:Name="Hunter" FontSize="Title" TextColor="Blue"></Label>
                 </Grid>
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Grid.Row="0" Text="" FontSize="Title"></Label>
                     <Label Grid.Column="0" Grid.Row="1" Text="Steps: " FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="2" Text="Step1" x:Name="Step1" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="3" Text="Step1" x:Name="Step2" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="4" Text="Step1" x:Name="Step3" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="5" Text="Step1" x:Name="Step4" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="6" Text="Step1" x:Name="Step5" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="7" Text="Step1" x:Name="Step6" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="8" Text="Step1" x:Name="Step7" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="9" Text="Step1" x:Name="Step8" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="10" Text="Step1" x:Name="Step9" FontSize="Title" TextColor="Blue"></Label>
-                    <Label Grid.Column="0" Grid.Row="11" Text="Step1" x:Name="Step10" FontSize="Title" TextColor="Blue"></Label>
+
+                    <CheckBox Grid.Row="2" x:Name="checkBox1"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="2" Text="Step1" x:Name="Step1" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox1},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox1},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="3" x:Name="checkBox2"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="3" Text="Step1" x:Name="Step2" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox2},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox2},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="4" x:Name="checkBox3"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="4" Text="Step1" x:Name="Step3" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox3},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox3},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="5" x:Name="checkBox4"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="5" Text="Step1" x:Name="Step4" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox4},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox4},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="6" x:Name="checkBox5"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="6" Text="Step1" x:Name="Step5" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox5},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox5},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="7" x:Name="checkBox6"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="7" Text="Step1" x:Name="Step6" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox6},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox6},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="8" x:Name="checkBox7"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="8" Text="Step1" x:Name="Step7" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox7},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox7},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="9" x:Name="checkBox8"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="9" Text="Step1" x:Name="Step8" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox8},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox8},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="10" x:Name="checkBox9"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="10" Text="Step1" x:Name="Step9" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox9},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox9},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <CheckBox Grid.Row="11" x:Name="checkBox10"></CheckBox>
+                    <Label Grid.Column="1" Grid.Row="11" Text="Step1" x:Name="Step10" FontSize="Title" TextColor="Blue">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox10},Path=IsChecked}"
+                                         Value="true">
+                                <Setter Property="TextDecorations"
+                                        Value="Strikethrough"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label"
+                                         Binding="{Binding Source={x:Reference checkBox10},Path=IsChecked}"
+                                         Value="false">
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"></Setter>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
                 </Grid>
             </StackLayout>
         </ScrollView>
