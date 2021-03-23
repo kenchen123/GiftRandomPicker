@@ -58,8 +58,17 @@ namespace GiftRandomPicker.Views
 
         private async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            var note = (EasterData)BindingContext;
-            await App.EasterStepsDatabase.DeleteStepsAsync(note);
+            var answer = await DisplayAlert("Delete?", "Are you sure to delete this record?", "Yes", "No");
+            if(answer)
+            {
+                var note = (EasterData)BindingContext;
+                await App.EasterStepsDatabase.DeleteStepsAsync(note);
+                Navigation.PushAsync(new EasterDataListPage());
+            }
+        }
+
+        private void OnCancelButtonClicked(object sender, EventArgs e)
+        {
             Navigation.PushAsync(new EasterDataListPage());
         }
     }

@@ -37,7 +37,7 @@ namespace GiftRandomPicker.Views
         }
 
 
-        private async void Button_Get_Hider(object sender, EventArgs e)
+        private async void GetHider(object sender, EventArgs e)
         {
             var data = await App.EasterStepsDatabase.GetStepsListAsync();
             if (_pickedHiderNames.Count != data.Count)
@@ -59,10 +59,12 @@ namespace GiftRandomPicker.Views
                 Step8.Text = item.Step8;
                 Step9.Text = item.Step9;
                 Step10.Text = item.Step10;
+                ButtonGetHider.IsEnabled = false;
+                ButtonGetHunter.IsEnabled = true;
             }
         }
 
-        private async void Button_Get_Hunter(object sender, EventArgs e)
+        private async void GetHunter(object sender, EventArgs e)
         {
             var data = await App.EasterStepsDatabase.GetStepsListAsync();
             if (_pickedHunterNames.Count != data.Count)
@@ -74,25 +76,35 @@ namespace GiftRandomPicker.Views
                 }
                 _pickedHunterNames.Add(item.Name);
                 Hunter.Text = item.Name;
+
+                ButtonGetHider.IsEnabled = true;
+                ButtonGetHunter.IsEnabled = false;
             }
         }
 
-        private void Button_Reset(object sender, EventArgs e)
+        private async void Button_Reset(object sender, EventArgs e)
         {
-            _pickedHiderNames.Clear();
-            _pickedHunterNames.Clear();
-            Hider.Text = string.Empty;
-            Hunter.Text = string.Empty;
-            Step1.Text = string.Empty;
-            Step2.Text = string.Empty;
-            Step3.Text = string.Empty;
-            Step4.Text = string.Empty;
-            Step5.Text = string.Empty;
-            Step6.Text = string.Empty;
-            Step7.Text = string.Empty;
-            Step8.Text = string.Empty;
-            Step9.Text = string.Empty;
-            Step10.Text = string.Empty;
+            var answer = await DisplayAlert("Reset?", "Are you sure to reset?", "Yes", "No");
+            if (answer)
+            {
+                _pickedHiderNames.Clear();
+                _pickedHunterNames.Clear();
+                ButtonGetHider.IsEnabled = true;
+                ButtonGetHunter.IsEnabled = false;
+                Hider.Text = string.Empty;
+                Hunter.Text = string.Empty;
+
+                Step1.Text = string.Empty;
+                Step2.Text = string.Empty;
+                Step3.Text = string.Empty;
+                Step4.Text = string.Empty;
+                Step5.Text = string.Empty;
+                Step6.Text = string.Empty;
+                Step7.Text = string.Empty;
+                Step8.Text = string.Empty;
+                Step9.Text = string.Empty;
+                Step10.Text = string.Empty;
+            }
         }
     }
 }

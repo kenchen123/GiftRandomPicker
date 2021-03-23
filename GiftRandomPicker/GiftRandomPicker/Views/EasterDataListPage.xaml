@@ -9,26 +9,31 @@
                      Clicked="OnAddClicked" />
     </ContentPage.ToolbarItems>
 
-    <CollectionView x:Name="collectionView"
-                    Margin="20"
-                    SelectionMode="Single"
-                    SelectionChanged="OnSelectionChanged">
-        <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Vertical"
-                               ItemSpacing="10" />
-        </CollectionView.ItemsLayout>
-        <!-- Define the appearance of each item in the list -->
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="{Binding Id}" FontSize="Title"/>
-                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="Title"/>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <ContentPage.Content>
+        <ScrollView>
+                <CollectionView Grid.ColumnSpan="2"
+                                x:Name="collectionView"
+                                Margin="20"
+                                SelectionMode="Single"
+                                SelectionChanged="OnSelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <!-- Define the appearance of each item in the list -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding Id}" FontSize="Title"/>
+                            <Label Grid.Column="1" Text="{Binding Name}" FontSize="Title"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                </CollectionView>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

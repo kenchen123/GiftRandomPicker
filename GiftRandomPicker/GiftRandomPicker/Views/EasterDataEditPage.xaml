@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GiftRandomPicker.Views.EasterDataEditPage"
              Title="Edit">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete"
+                     Clicked="OnDeleteButtonClicked" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <ScrollView>
             <Grid>
@@ -49,8 +55,8 @@
                 <Button Grid.Column="0" Grid.Row="11" Text="Save"
                         Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1" Grid.Row="11"
-                        Text="Delete"
-                        Clicked="OnDeleteButtonClicked"/>
+                        Text="Cancel"
+                        Clicked="OnCancelButtonClicked"/>
             </Grid>
         </ScrollView>
     </ContentPage.Content>
