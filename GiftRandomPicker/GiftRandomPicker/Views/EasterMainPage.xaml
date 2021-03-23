@@ -11,6 +11,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Button Clicked="Button_Reset" Text="Reset" Style="{StaticResource ButtonStyle}"></Button>
                 <Button Clicked="Button_Get_Hider" Text="Get hider" Style="{StaticResource ButtonStyle}"></Button>
                 <Button Clicked="Button_Get_Hunter" Text="Get hunter" Style="{StaticResource ButtonStyle}"></Button>
                 <Grid>

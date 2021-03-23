@@ -76,5 +76,23 @@ namespace GiftRandomPicker.Views
                 Hunter.Text = item.Name;
             }
         }
+
+        private void Button_Reset(object sender, EventArgs e)
+        {
+            _pickedHiderNames.Clear();
+            _pickedHunterNames.Clear();
+            Hider.Text = string.Empty;
+            Hunter.Text = string.Empty;
+            Step1.Text = string.Empty;
+            Step2.Text = string.Empty;
+            Step3.Text = string.Empty;
+            Step4.Text = string.Empty;
+            Step5.Text = string.Empty;
+            Step6.Text = string.Empty;
+            Step7.Text = string.Empty;
+            Step8.Text = string.Empty;
+            Step9.Text = string.Empty;
+            Step10.Text = string.Empty;
+        }
     }
 }
