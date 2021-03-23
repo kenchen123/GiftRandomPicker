@@ -40,7 +40,18 @@ namespace GiftRandomPicker.Views
             var data = new List<EasterData>()
             {
                 new EasterData {Name = "Leo"},
-                new EasterData {Name = "Weita"},
+                new EasterData
+                {
+                    Name = "Weita",
+                    Step1 = "Go to badge out sensor.",
+                    Step2 = "Find the first door you are looking at.",
+                    Step3 = "Close the door.",
+                    Step4 = "Open the door.",
+                    Step5 = "Go through the door.",
+                    Step6 = "Go to weita's desk.",
+                    Step7 = "Open all the draws.",
+                    Step8 = "Look for the egg."
+                },
                 new EasterData {Name = "Ken"},
                 new EasterData {Name = "Jason"},
                 new EasterData {Name = "Shareena"},

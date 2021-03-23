@@ -2,13 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GiftRandomPicker.Views.EasterMainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit Mode"
+                     Clicked="NavigateToEditPage" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Edit Mode"
-                    Clicked="NavigateToEditPage" />
-            <Label Text="Welcome to Xamarin.Forms!"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Button Clicked="Button_Get_Hider" Text="Get hider" Style="{StaticResource ButtonStyle}"></Button>
+                <Button Clicked="Button_Get_Hunter" Text="Get hunter" Style="{StaticResource ButtonStyle}"></Button>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Hider: " FontSize="Title"></Label>
+                    <Label Grid.Column="1" Text="Hunter: " FontSize="Title"></Label>
+
+                    <Label Grid.Column="0" Grid.Row="1" Text="" x:Name="Hider" FontSize="Title"></Label>
+                    <Label Grid.Column="1" Grid.Row="1" Text="" x:Name="Hunter" FontSize="Title"></Label>
+
+                    <Label Grid.Column="0" Grid.Row="2" Text="Steps: " FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="3" Text="Step1" x:Name="Step1" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="4" Text="Step1" x:Name="Step2" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="5" Text="Step1" x:Name="Step3" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="6" Text="Step1" x:Name="Step4" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="7" Text="Step1" x:Name="Step5" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="8" Text="Step1" x:Name="Step6" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="9" Text="Step1" x:Name="Step7" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="10" Text="Step1" x:Name="Step8" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="11" Text="Step1" x:Name="Step9" FontSize="Title"></Label>
+                    <Label Grid.Column="0" Grid.Row="12" Text="Step1" x:Name="Step10" FontSize="Title"></Label>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
