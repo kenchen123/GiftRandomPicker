@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using GiftRandomPicker.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -20,6 +21,56 @@ namespace GiftRandomPicker.Views
         public EasterMainPage()
         {
             InitializeComponent();
+            EnableStepClickable();
+        }
+
+        private void EnableStepClickable()
+        {
+            Step1.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox1))
+            });
+            Step2.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox2))
+            });
+            Step3.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox3))
+            });
+            Step4.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox4))
+            });
+            Step5.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox5))
+            });
+            Step6.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox6))
+            });
+            Step7.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox7))
+            });
+            Step8.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox8))
+            });
+            Step9.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox9))
+            });
+            Step10.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox10))
+            });
+        }
+
+        private void ChangeCheckBoxStatus(CheckBox element)
+        {
+            element.IsChecked = !element.IsChecked;
         }
 
         private async void NavigateToEditPage(object sender, EventArgs e)
