@@ -58,6 +58,17 @@ namespace GiftRandomPicker.Views
                 Step10.Text = item.Step10;
                 ButtonGetHider.IsEnabled = false;
                 ButtonGetHunter.IsEnabled = true;
+
+                checkBox1.IsChecked = false;
+                checkBox2.IsChecked = false;
+                checkBox3.IsChecked = false;
+                checkBox4.IsChecked = false;
+                checkBox5.IsChecked = false;
+                checkBox6.IsChecked = false;
+                checkBox7.IsChecked = false;
+                checkBox8.IsChecked = false;
+                checkBox9.IsChecked = false;
+                checkBox10.IsChecked = false;
             }
         }
 
