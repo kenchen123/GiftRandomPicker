@@ -28,49 +28,70 @@ namespace GiftRandomPicker.Views
         {
             Step1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox1))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox1, null, checkBox2))
             });
             Step2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox2))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox2, checkBox1, checkBox3))
             });
             Step3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox3))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox3, checkBox2, checkBox4))
             });
             Step4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox4))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox4, checkBox3, checkBox5))
             });
             Step5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox5))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox5, checkBox4, checkBox6))
             });
             Step6.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox6))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox6, checkBox5, checkBox7))
             });
             Step7.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox7))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox7, checkBox6, checkBox8))
             });
             Step8.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox8))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox8, checkBox7, checkBox9))
             });
             Step9.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox9))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox9, checkBox8, checkBox10))
             });
             Step10.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox10))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox10, checkBox9, null))
             });
         }
 
-        private void ChangeCheckBoxStatus(CheckBox element)
+        private void ChangeCheckBoxStatus(CheckBox element, CheckBox previousElement, CheckBox nextElement)
         {
-            element.IsChecked = !element.IsChecked;
+            if (previousElement is null)
+            {
+                if (!nextElement.IsChecked)
+                {
+                    element.IsChecked = !element.IsChecked;
+                }
+            }
+            else if (nextElement is null)
+            {
+                element.IsChecked = !element.IsChecked;
+            }
+            else
+            {
+                if (previousElement.IsChecked && !nextElement.IsChecked)
+                {
+                    element.IsChecked = !element.IsChecked;
+                    if (element.IsChecked)
+                    {
+                        previousElement.IsEnabled = false;
+                    }
+                }
+            }
         }
 
         private async void NavigateToEditPage(object sender, EventArgs e)
