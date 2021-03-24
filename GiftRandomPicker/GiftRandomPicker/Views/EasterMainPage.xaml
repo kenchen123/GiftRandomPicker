@@ -19,8 +19,8 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Button Grid.ColumnSpan="2" Clicked="Button_Reset" Text="Reset" Style="{StaticResource ButtonStyle}"></Button>
-                    <Button Grid.Column="0" Grid.Row="1" x:Name="ButtonGetHider" Clicked="GetHider" Text="Get hider" Style="{StaticResource ButtonStyle}"></Button>
-                    <Button Grid.Column="1" Grid.Row="1" x:Name="ButtonGetHunter" Clicked="GetHunter" Text="Get hunter" Style="{StaticResource ButtonStyle}" IsEnabled="False"></Button>
+                    <Button Grid.Column="0" Grid.Row="1" x:Name="ButtonGetHider" Clicked="GetHider" Text="Pick up hider" Style="{StaticResource ButtonStyle}"></Button>
+                    <Button Grid.Column="1" Grid.Row="1" x:Name="ButtonGetHunter" Clicked="GetHunter" Text="Pick up hunter" Style="{StaticResource ButtonStyle}" IsEnabled="False"></Button>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
