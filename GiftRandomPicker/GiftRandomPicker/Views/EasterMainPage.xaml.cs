@@ -27,12 +27,9 @@ namespace GiftRandomPicker.Views
             await Navigation.PushAsync(new EasterDataListPage());
         }
 
-        private async Task<EasterData> RandomPick(List<EasterData> data)
+        private EasterData RandomPick(IEnumerable<EasterData> data, IEnumerable<string> pickedNameList)
         {
-            //var data = await App.EasterStepsDatabase.GetStepsListAsync();
-            var pickedItem = data.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
-            //var pickedItem = data.Where(x => !_pickedNames.Contains(x.Name)).OrderBy(x => Guid.NewGuid()).FirstOrDefault();
-            //var pickedItem = data.Where(x => x.Name == "Weita").FirstOrDefault();
+            var pickedItem = data.Where(x => !pickedNameList.Contains(x.Name)).OrderBy(x => Guid.NewGuid()).FirstOrDefault();
             return pickedItem;
         }
 
@@ -42,10 +39,10 @@ namespace GiftRandomPicker.Views
             var data = await App.EasterStepsDatabase.GetStepsListAsync();
             if (_pickedHiderNames.Count != data.Count)
             {
-                var item = await RandomPick(data);
+                var item = RandomPick(data, _pickedHiderNames);
                 while (_pickedHiderNames.Contains(item.Name))
                 {
-                    item = await RandomPick(data);
+                    item = RandomPick(data, _pickedHiderNames);
                 }
                 _pickedHiderNames.Add(item.Name);
                 Hider.Text = item.Name;
@@ -69,10 +66,10 @@ namespace GiftRandomPicker.Views
             var data = await App.EasterStepsDatabase.GetStepsListAsync();
             if (_pickedHunterNames.Count != data.Count)
             {
-                var item = await RandomPick(data);
+                var item = RandomPick(data, _pickedHunterNames);
                 while (item.Name == Hider.Text)
                 {
-                    item = await RandomPick(data);
+                    item = RandomPick(data, _pickedHunterNames);
                 }
                 _pickedHunterNames.Add(item.Name);
                 Hunter.Text = item.Name;
