@@ -7,22 +7,37 @@
         <Color x:Key="PickedLabelTextColor">Black</Color>
         <Color x:Key="ButtonTextColor">White</Color>
         <Color x:Key="Background">#121212</Color>
+        <Color x:Key="BrightOrange">#fea221</Color>
+        <Color x:Key="BrightPink">#FF4081</Color> 
+        <Color x:Key="BrightYellow">#ffe91b</Color> 
+        <Color x:Key="PastelYellow">#f3e88e</Color>
+        <Color x:Key="PastelOrange">#ebc378</Color>
+        <Color x:Key="PastelGreen">#7caa82</Color>
+        <Color x:Key="PastelRed">#e65e67</Color>
+        <Color x:Key="PastelPink">#fcb7c3</Color> 
+        <Color x:Key="PastelBlue">#50b4c3</Color>
+        <Color x:Key="PastelDarkBlue">#3c8489</Color>
+        <Color x:Key="PastelSkyBlue">#99e3f0</Color>
         <Style TargetType="{x:Type Label}" x:Key="LabelStyle">
             <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"></Setter>
             <Setter Property="FontSize" Value="Large"></Setter>
         </Style>
         <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
-            <Setter Property="BackgroundColor" Value="#286090"></Setter>
+            <Setter Property="BackgroundColor" Value="{StaticResource PastelBlue}"></Setter>
             <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}"></Setter>
             <Setter Property="FontSize" Value="Title"></Setter>
-            <Setter Property="BorderColor" Value="Black"></Setter>
+            <Setter Property="BorderColor" Value="White"></Setter>
             <Setter Property="BorderWidth" Value="1"></Setter>
             <Setter Property="CornerRadius" Value="10"></Setter>
         </Style>
         <Style TargetType="{x:Type Label}" x:Key="StepStyle">
-            <Setter Property="TextColor" Value="Blue"></Setter>
-            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="TextColor" Value="{StaticResource Background}"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
         </Style>
-
+        <Style TargetType="Image" x:Key="imageAspect" >
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+            <Setter Property="HorizontalOptions" Value="Center"></Setter>
+            <Setter Property="Aspect" Value="AspectFit"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

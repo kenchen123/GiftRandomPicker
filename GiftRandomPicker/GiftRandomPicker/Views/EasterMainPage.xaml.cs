@@ -52,19 +52,7 @@ namespace GiftRandomPicker.Views
             });
             Step7.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox7, checkBox6, checkBox8))
-            });
-            Step8.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox8, checkBox7, checkBox9))
-            });
-            Step9.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox9, checkBox8, checkBox10))
-            });
-            Step10.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() => ChangeCheckBoxStatus(checkBox10, checkBox9, null))
+                Command = new Command(() => ChangeCheckBoxStatus(checkBox7, checkBox6, null))
             });
         }
 
@@ -126,9 +114,6 @@ namespace GiftRandomPicker.Views
                 Step5.Text = item.Step5;
                 Step6.Text = item.Step6;
                 Step7.Text = item.Step7;
-                Step8.Text = item.Step8;
-                Step9.Text = item.Step9;
-                Step10.Text = item.Step10;
                 ButtonGetHider.IsEnabled = false;
                 ButtonGetHunter.IsEnabled = true;
 
@@ -139,9 +124,6 @@ namespace GiftRandomPicker.Views
                 checkBox5.IsChecked = false;
                 checkBox6.IsChecked = false;
                 checkBox7.IsChecked = false;
-                checkBox8.IsChecked = false;
-                checkBox9.IsChecked = false;
-                checkBox10.IsChecked = false;
             }
         }
 
@@ -182,9 +164,6 @@ namespace GiftRandomPicker.Views
                 Step5.Text = string.Empty;
                 Step6.Text = string.Empty;
                 Step7.Text = string.Empty;
-                Step8.Text = string.Empty;
-                Step9.Text = string.Empty;
-                Step10.Text = string.Empty;
             }
         }
     }
