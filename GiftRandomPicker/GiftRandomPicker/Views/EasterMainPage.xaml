@@ -53,7 +53,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox1},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -70,7 +70,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox2},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -87,7 +87,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox3},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -104,7 +104,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox4},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -121,7 +121,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox5},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -138,7 +138,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox6},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -155,7 +155,7 @@
                             <DataTrigger TargetType="Label"
                                          Binding="{Binding Source={x:Reference checkBox7},Path=IsChecked}"
                                          Value="false">
-                                <Setter Property="TextDecorations" Value="None"></Setter>
+                                <Setter Property="TextDecorations" Value="Underline"></Setter>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>

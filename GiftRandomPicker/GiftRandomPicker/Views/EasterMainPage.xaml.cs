@@ -65,7 +65,7 @@ namespace GiftRandomPicker.Views
                     element.IsChecked = !element.IsChecked;
                 }
             }
-            else if (nextElement is null)
+            else if (nextElement is null && previousElement.IsChecked)
             {
                 element.IsChecked = !element.IsChecked;
             }
