@@ -71,11 +71,7 @@ namespace GiftRandomPicker.Views
                     Step2 = "Go to the door.",
                     Step3 = "Go through the door and walk 7 steps, and say \"Here I come.\"",
                     Step4 = "Turn right 270 degrees.",
-                    Step5 = "Walk 2 steps, and say \"I will find you.\"",
-                    Step6 = "Find a glass jar on the table.",
-                    Step7 = "",
-                    Step8 = ""
-
+                    Step5 = "Walk 2 steps, and say \"I will find you.\""
                 },
                 new EasterData
                 {
@@ -92,14 +88,12 @@ namespace GiftRandomPicker.Views
                 new EasterData
                 {
                     Name = "Shareena",
-                    Step1 = "Step1",
-                    Step2 = "Step2",
-                    Step3 = "Step3",
-                    Step4 = "Step4",
-                    Step5 = "Step5",
-                    Step6 = "Step6",
-                    Step7 = "Step7",
-                    Step8 = "Step8"
+                    Step1 = "Go out of the meeting room",
+                    Step2 = "Think for a few seconds as to where it was hidden",
+                    Step3 = "Walk to the pantry area",
+                    Step4 = "on the lower cabinets, from right to left, open the 3rd cabinet.",
+                    Step5 = "Open the fridge, cool yourself",
+                    Step6 = "Look inside the box of tea bags "
                 },
                 new EasterData
                 {
