@@ -118,6 +118,7 @@ namespace GiftRandomPicker.Views
                 }
                 _pickedHiderNames.Add(item.Name);
                 Hider.Text = item.Name;
+                Hunter.Text = string.Empty;
                 Step1.Text = item.Step1;
                 Step2.Text = item.Step2;
                 Step3.Text = item.Step3;

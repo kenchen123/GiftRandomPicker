@@ -69,9 +69,9 @@ namespace GiftRandomPicker.Views
                     Name = "Ken",
                     Step1 = "Stand up.",
                     Step2 = "Go to the door.",
-                    Step3 = "Go through the door and walk 7 steps.",
+                    Step3 = "Go through the door and walk 7 steps, and say \"Here I come.\"",
                     Step4 = "Turn right 270 degrees.",
-                    Step5 = "Walk 2 steps.",
+                    Step5 = "Walk 2 steps, and say \"I will find you.\"",
                     Step6 = "Find a glass jar on the table.",
                     Step7 = "",
                     Step8 = ""
