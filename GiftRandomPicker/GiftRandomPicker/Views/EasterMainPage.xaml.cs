@@ -164,6 +164,14 @@ namespace GiftRandomPicker.Views
                 Step5.Text = string.Empty;
                 Step6.Text = string.Empty;
                 Step7.Text = string.Empty;
+
+                checkBox1.IsChecked = false;
+                checkBox2.IsChecked = false;
+                checkBox3.IsChecked = false;
+                checkBox4.IsChecked = false;
+                checkBox5.IsChecked = false;
+                checkBox6.IsChecked = false;
+                checkBox7.IsChecked = false;
             }
         }
     }
