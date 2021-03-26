@@ -76,14 +76,12 @@ namespace GiftRandomPicker.Views
                 new EasterData
                 {
                     Name = "Jason",
-                    Step1 = "Step1",
-                    Step2 = "Step2",
-                    Step3 = "Step3",
-                    Step4 = "Step4",
-                    Step5 = "Step5",
-                    Step6 = "Step6",
-                    Step7 = "Step7",
-                    Step8 = "Step8"
+                    Step1 = "Walk to the front of the printer",
+                    Step2 = "Turn left",
+                    Step3 = "Go straight until the end",
+                    Step4 = "Turn Left",
+                    Step5 = "Step forward for 6 steps",
+                    Step6 = "Find the egg around telephone"
                 },
                 new EasterData
                 {
