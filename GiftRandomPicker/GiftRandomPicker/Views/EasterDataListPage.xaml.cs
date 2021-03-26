@@ -71,7 +71,8 @@ namespace GiftRandomPicker.Views
                     Step2 = "Go to the door.",
                     Step3 = "Go through the door and walk 7 steps, and say \"Here I come.\"",
                     Step4 = "Turn right 270 degrees.",
-                    Step5 = "Walk 2 steps, and say \"I will find you.\""
+                    Step5 = "Walk 2 steps, and say \"I will find you.\"",
+                    Step6 = "Find a glass jar on the desk."
                 },
                 new EasterData
                 {
